@@ -93,7 +93,7 @@ and do not weaken foreground semantics with Tailwind color-opacity modifiers.
 - **Border Subtle**: `var(--border-subtle)` — very quiet outlines on cards, nested panels, and non-interactive containers
 - **Border Strong**: `var(--border-strong)` — higher-emphasis structural borders
 - **Border Selected**: `var(--border-selected)` — selected-state component borders
-- **Input**: `var(--input)` — input field borders
+- **Input**: `var(--input)` — input field borders; resolves to `var(--border)` so input outlines composite against their surface like every other neutral border
 - **Ring**: `var(--ring)` — color source for focus feedback contained inside component bounds
 
 ### Border Token Rules
