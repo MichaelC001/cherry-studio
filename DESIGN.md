@@ -372,7 +372,7 @@ Source: `DialogContent` and related primitives from `@cherrystudio/ui` (`package
 - Title: `text-lg leading-none font-semibold`
 - Description: `text-muted-foreground text-sm`
 - Footer: mobile `flex-col-reverse`, desktop row with `sm:justify-end`
-- Close button: shown by default, absolute `top-4 right-4`, low opacity, higher opacity on hover; hide with `showCloseButton={false}` when the surrounding UI supplies its own close affordance
+- Close button: shown by default, absolute `top-2.5 right-2.5` with a 28px (`size-7`) hit area around the 16px glyph, low opacity, higher opacity plus a `bg-accent` fill on hover; hide with `showCloseButton={false}` when the surrounding UI supplies its own close affordance
 
 **Actions**
 - Use `Button variant="outline"` for cancel/secondary actions.
