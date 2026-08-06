@@ -1516,6 +1516,33 @@ describe('ResourceList', () => {
     )
   })
 
+  it('gives item rows and group headers a surface inside the drag overlay', () => {
+    const Provider = ResourceList.Provider<TestItem>
+
+    render(
+      <Provider items={ITEMS} groupBy={(item) => ({ id: item.kind, label: item.kind })}>
+        <ResourceList.Frame>
+          <ResourceList.VirtualItems<TestItem>
+            renderItem={(item) => (
+              <ResourceList.Item item={item}>
+                <span>{item.name}</span>
+              </ResourceList.Item>
+            )}
+          />
+        </ResourceList.Frame>
+      </Provider>
+    )
+
+    expect(screen.getByText('Alpha').closest('[role="option"]')).toHaveClass(
+      'in-data-drag-overlay:bg-sidebar-accent',
+      'in-data-drag-overlay:text-sidebar-foreground'
+    )
+    expect(screen.getByRole('button', { name: 'session' }).parentElement).toHaveClass(
+      'in-data-drag-overlay:bg-sidebar-accent',
+      'in-data-drag-overlay:text-sidebar-foreground'
+    )
+  })
+
   it('renders caller-provided leading group header actions separately from collapse controls', () => {
     const onSelectGroup = vi.fn()
     const Provider = ResourceList.Provider<TestItem>

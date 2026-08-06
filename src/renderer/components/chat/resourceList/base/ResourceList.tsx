@@ -22,6 +22,7 @@ import {
 } from './ResourceListContext'
 import { GroupHeader, GroupShowMore } from './ResourceListGroups'
 import {
+  RESOURCE_LIST_DRAG_OVERLAY_ROW_CLASS,
   RESOURCE_LIST_INTERACTIVE_ROW_CLASS,
   RESOURCE_LIST_ROW_HEIGHT_CLASS,
   RESOURCE_LIST_SELECTED_ROW_CLASS,
@@ -396,6 +397,7 @@ function Item<T extends ResourceListItemBase>({
         'group relative flex w-full cursor-pointer items-center gap-1.5 px-2.5 text-[13px] text-foreground outline-none transition-all duration-150 has-[[data-resource-list-leading-slot=true]]:px-1.5',
         RESOURCE_LIST_VISUAL_ROW_CLASS,
         RESOURCE_LIST_INTERACTIVE_ROW_CLASS,
+        RESOURCE_LIST_DRAG_OVERLAY_ROW_CLASS,
         rowState.active && !rowState.selected && 'bg-sidebar-accent text-sidebar-foreground',
         rowState.selected && RESOURCE_LIST_SELECTED_ROW_CLASS,
         rowState.revealFocused && 'animation-resource-list-reveal-focus',

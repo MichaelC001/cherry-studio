@@ -15,6 +15,7 @@ import {
   useResourceListView
 } from './ResourceListContext'
 import {
+  RESOURCE_LIST_DRAG_OVERLAY_ROW_CLASS,
   RESOURCE_LIST_INTERACTIVE_ROW_CLASS,
   RESOURCE_LIST_LEADING_ACTION_SLOT_CLASS,
   RESOURCE_LIST_ROW_HEIGHT_CLASS,
@@ -74,7 +75,8 @@ export function SectionHeader({ section, className, ref, style, ...props }: Sect
         className={cn(
           'flex w-full items-center gap-1.5 px-2.5 text-muted-foreground transition-colors duration-150',
           RESOURCE_LIST_VISUAL_ROW_CLASS,
-          RESOURCE_LIST_INTERACTIVE_ROW_CLASS
+          RESOURCE_LIST_INTERACTIVE_ROW_CLASS,
+          RESOURCE_LIST_DRAG_OVERLAY_ROW_CLASS
         )}>
         <button
           type="button"
@@ -172,6 +174,7 @@ export function GroupHeader({ group, className, ref, style, onContextMenu, ...pr
         hasLeadingSlot ? 'px-1.5' : 'px-2.5',
         RESOURCE_LIST_VISUAL_ROW_CLASS,
         RESOURCE_LIST_INTERACTIVE_ROW_CLASS,
+        RESOURCE_LIST_DRAG_OVERLAY_ROW_CLASS,
         selected && RESOURCE_LIST_SELECTED_ROW_CLASS,
         groupHeaderClassName
       )}>
